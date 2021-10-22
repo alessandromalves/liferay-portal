@@ -114,7 +114,7 @@ definition {
 
 	@description = "Verify that the progress bar is shown correctly."
 	@priority = "4"
-	test ProgressBarIsShownCorrectly {	
+	test ProgressBarIsShownCorrectly {
 		KaleoFormsAdmin.addProcess();
 
 		KaleoFormsAdmin.addProcessDetails(
@@ -122,8 +122,8 @@ definition {
 			kfProcessName = "Kaleo Forms Process");
 
 		KaleoFormsAdmin.viewProgressBarIsShownCorrectly(
-			stepProcess = "Details",
-			iconType = "circle");
+			iconType = "circle",
+			stepProcess = "Details");
 
 		KaleoFormsAdmin.next();
 
@@ -132,13 +132,13 @@ definition {
 			kfProcessName = "Kaleo Forms Process");
 
 		KaleoFormsAdmin.viewProgressBarIsShownCorrectly(
-			stepProcess = "Fields",
-			iconType = "circle");
+			iconType = "circle",
+			stepProcess = "Fields");
 
 		KaleoFormsAdmin.viewProgressBarIsShownCorrectly(
-			stepProcess = "Details",
-			iconType = "check");
-		
+			iconType = "check",
+			stepProcess = "Details");
+
 		KaleoFormsAdmin.next();
 
 		KaleoFormsAdmin.chooseWorkflow(
@@ -148,17 +148,14 @@ definition {
 		KaleoFormsAdmin.next();
 
 		KaleoFormsAdmin.viewProgressBarIsShownCorrectly(
-			stepProcess = "Forms",
-			iconType = "circle");
+			iconType = "circle",
+			stepProcess = "Forms");
 
 		for (var steps : list "Details,Fields,Workflow") {
 			KaleoFormsAdmin.viewProgressBarIsShownCorrectly(
-			stepProcess = "${steps}",
-			iconType = "check");
+				iconType = "check",
+				stepProcess = "${steps}");
 		}
-
-
-		
 	}
 
 	@description = "Verify that the workflow is required."
