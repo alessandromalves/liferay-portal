@@ -16,6 +16,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>SAVE_BUTTON_INACTIVE</td>
+	<td>//button[@disabled='' and contains(.,'Save')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td></td>
 	<td></td>
 	<td></td>
@@ -61,6 +66,11 @@
 <tr>
 	<td></td>
 	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>FIELD_NAME_REQUIRED</td>
+	<td>//*[contains(text(),'Name')]//..//*[name()='svg'][contains(@class,'lexicon-icon lexicon-icon-asterisk')]</td>
 	<td></td>
 </tr>
 <!--WORKFLOW-->
