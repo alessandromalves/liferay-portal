@@ -73,10 +73,8 @@ definition {
 		KaleoFormsAdmin.addProcess();
 
 		KaleoFormsAdmin.viewFieldRequired(
-			progressTitle = "Details",
-			kfProcessName = "Kaleo Forms Process");
-			
-
+			kfProcessName = "Kaleo Forms Process",
+			progressTitle = "Details");
 	}
 
 	@description = "Verify that the field set is required."
