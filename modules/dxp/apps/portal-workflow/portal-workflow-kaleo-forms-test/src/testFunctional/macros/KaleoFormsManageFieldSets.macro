@@ -1,0 +1,25 @@
+definition {
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	macro viewFieldSetCannotBeFound {
+		Search.searchCP(searchTerm = "${fieldSetName}");
+
+		AssertTextEquals(
+			locator1 = "Message#EMPTY_INFO",
+			value1 = "No Field Sets were found.");
+	}
+
+}
