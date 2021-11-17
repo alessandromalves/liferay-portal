@@ -12,15 +12,6 @@
 <tbody>
 <!--PROCESS_TABLE-->
 
-
-
-
-
-
-
-
-
-
 <tr>
 	<td>PAGINATION_NUMBER</td>
 	<td>//*[contains(@class, 'page-link') and contains(text(), '${key_pageNumber}')]</td>
