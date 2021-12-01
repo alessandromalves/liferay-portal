@@ -1,6 +1,6 @@
 definition {
 
-    macro viewTableDisplaysColumns {
+	macro viewTableDisplaysColumns {
 		for (var tableHeader : list "Name,Description,Color,Default") {
 			AssertElementPresent(
 				key_tableHeader = "${tableHeader}",
