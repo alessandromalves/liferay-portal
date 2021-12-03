@@ -212,13 +212,9 @@ definition {
 
 		CalendarExportImport.gotoImportTab(subTab = "New Import Process");
 
-		CalendarExportImport.importCalendarFile(
-			calendarFile = "Calendar-202111251634.portlet.lar");
+		CalendarExportImport.importCalendarFile(calendarFile = "Calendar-202111251634.portlet.lar");
 
 		CalendarExportImport.viewSuccessStatusOnCurrentAndPreviousTab();
-
-
-
 	}
 
 }
