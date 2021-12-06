@@ -206,8 +206,6 @@ definition {
 		CalendarExportImport.viewExportedCalendarFileName();
 
 		CalendarExportImport.viewSuccessStatusOnCurrentAndPreviousTab();
-
-
 	}
 
 	@description = "LRQA-71361 - Verify that user can view the new imported process status in the Current and Previous tab"
