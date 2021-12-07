@@ -1,72 +1,71 @@
 definition {
 
-    macro gotoPortletExportImport {
-        Portlet.gotoPortletOptions(
-			portletName = "Calendar",
-			portletOption = "Export / Import");
-    }
-
-    macro selectConfigurationIFrame {
-		SelectFrame(locator1 = "IFrame#MODAL_BODY");
-	}
-
-    macro gotoExportTab {
-		if (isSet(subTab)) {
-            Navigator.gotoNavTab(navTab = "Export");
-
-            Navigator.gotoNavTab(navTab = "${subTab}");
-        }
-
-         else {
-            Navigator.gotoNavTab(navTab = "Export");
-        }
-    }
-
-    macro exportCalendarFile {
-        Button.click(button = "Export");
-	}
-
-    macro exportAndDownloadACalendarFile {
-        var calendarSelected = selenium.getText("CalendarExportImport#CALENDAR_TO_BE_EXPORTED");
-
-        CalendarExportImport.exportCalendarFile();
-
-        AssertClick.assertPartialTextClickAt(
-            locator1 = "CalendarExportImport#EXPORTED_CALENDAR_FILE_NAME",
-            value1 = "${calendarSelected}");
-    }
-
-     macro removeWidgetCalendar {
-        Portlet.gotoPortletOptions(portletName = "Calendar");
-
-		MenuItem.clickNoError(menuItem = "Remove");
-
-		AssertConfirm(value1 = "Are you sure you want to remove this component?");
-    }
-
-     macro gotoImportTab {
-		if (isSet(subTab)) {
-            Navigator.gotoNavTab(navTab = "Import");
-
-            Navigator.gotoNavTab(navTab = "${subTab}");
-        }
-
-        else {
-            Navigator.gotoNavTab(navTab = "Import");
-        }
-    }
-
-    macro importCalendarFile {
-		UploadDependencyFile.uploadFile(fileName = "${calendarFile}");
-
-        Button.click(button = "Continue");
-
-		Button.click(button = "Import");
-	}
-
-    macro closeFrame {
+	macro closeFrame {
 		SelectFrame(value1 = "relative=top");
 
 		Click.mouseDownMouseUp(locator1 = "Modal#CLOSE_BUTTON");
 	}
+
+	macro exportAndDownloadACalendarFile {
+		var calendarSelected = selenium.getText("CalendarExportImport#CALENDAR_TO_BE_EXPORTED");
+
+		CalendarExportImport.exportCalendarFile();
+
+		AssertClick.assertPartialTextClickAt(
+			locator1 = "CalendarExportImport#EXPORTED_CALENDAR_FILE_NAME",
+			value1 = "${calendarSelected}");
+	}
+
+	macro exportCalendarFile {
+		Button.click(button = "Export");
+	}
+
+	macro gotoExportTab {
+		if (isSet(subTab)) {
+			Navigator.gotoNavTab(navTab = "Export");
+
+			Navigator.gotoNavTab(navTab = "${subTab}");
+		}
+		else {
+			Navigator.gotoNavTab(navTab = "Export");
+		}
+	}
+
+	macro gotoImportTab {
+		if (isSet(subTab)) {
+			Navigator.gotoNavTab(navTab = "Import");
+
+			Navigator.gotoNavTab(navTab = "${subTab}");
+		}
+		else {
+			Navigator.gotoNavTab(navTab = "Import");
+		}
+	}
+
+	macro gotoPortletExportImport {
+		Portlet.gotoPortletOptions(
+			portletName = "Calendar",
+			portletOption = "Export / Import");
+	}
+
+	macro importCalendarFile {
+		UploadDependencyFile.uploadFile(fileName = "${calendarFile}");
+
+		Button.click(button = "Continue");
+
+		Button.click(button = "Import");
+	}
+
+	macro removeWidgetCalendar {
+		Portlet.gotoPortletOptions(portletName = "Calendar");
+
+		MenuItem.clickNoError(menuItem = "Remove");
+
+		AssertConfirm(value1 = "Are you sure you want to remove this component?");
+	}
+
+	macro selectConfigurationIFrame {
+		SelectFrame(locator1 = "IFrame#MODAL_BODY");
+	}
+
 }

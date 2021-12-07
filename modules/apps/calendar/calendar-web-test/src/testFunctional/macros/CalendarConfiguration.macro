@@ -85,6 +85,26 @@ definition {
 			value1 = "${weekStartDay}");
 	}
 
+	macro tearDown {
+		CalendarNavigator.gotoConfiguration();
+
+		CalendarConfiguration.selectDefaultDuration(defaultDuration = "60 Minutes");
+
+		CalendarConfiguration.selectDefaultView(defaultView = "Week");
+
+		CalendarConfiguration.selectWeekStartsOn(weekStartDay = "Sunday");
+
+		CalendarConfiguration.save();
+
+		CalendarConfiguration.enableRSS();
+
+		CalendarConfiguration.save();
+	}
+
+	macro viewRSSOptionsDisabled {
+		AssertElementNotPresent(locator1 = "CalendarConfiguration#RSS_SETTING_OPTIONS");
+	}
+
 	macro viewSelectDefaultDuration {
 		AssertSelectedLabel(
 			locator1 = "CalendarConfiguration#USER_SETTINGS_DEFAULT_DURATION_SELECT",
@@ -107,27 +127,6 @@ definition {
 		AssertSelectedLabel(
 			locator1 = "CalendarConfiguration#USER_SETTINGS_WEEK_STARTS_ON_SELECT",
 			value1 = "${weekStartDay}");
-	}
-
-
-	macro tearDown {
-		CalendarNavigator.gotoConfiguration();
-
-		CalendarConfiguration.selectDefaultDuration(defaultDuration = "60 Minutes");
-
-		CalendarConfiguration.selectDefaultView(defaultView = "Week");
-
-		CalendarConfiguration.selectWeekStartsOn(weekStartDay = "Sunday");
-
-		CalendarConfiguration.save();
-
-		CalendarConfiguration.enableRSS();
-
-		CalendarConfiguration.save();
-	}
-
-	macro viewRSSOptionsDisabled {
-		AssertElementNotPresent(locator1 = "CalendarConfiguration#RSS_SETTING_OPTIONS");
 	}
 
 }
