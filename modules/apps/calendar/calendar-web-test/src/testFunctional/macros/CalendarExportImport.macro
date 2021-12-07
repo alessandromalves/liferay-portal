@@ -1,38 +1,38 @@
 definition {
 
-    macro gotoPortletExportImport {
-        Portlet.gotoPortletOptions(
-			portletName = "Calendar",
-			portletOption = "Export / Import");
-    }
-
-    macro selectConfigurationIFrame {
-		SelectFrame(locator1 = "IFrame#MODAL_BODY");
-	}
-
-     macro gotoImportTab {
-		if (isSet(subTab)) {
-            Navigator.gotoNavTab(navTab = "Import");
-
-            Navigator.gotoNavTab(navTab = "${subTab}");
-        }
-
-        else {
-            Navigator.gotoNavTab(navTab = "Import");
-        }
-    }
-
-    macro importCalendarFile {
-		UploadDependencyFile.uploadFile(fileName = "${calendarFile}");
-
-        Button.click(button = "Continue");
-
-		Button.click(button = "Import");
-	}
-
-    macro closeFrame {
+	macro closeFrame {
 		SelectFrame(value1 = "relative=top");
 
 		Click.mouseDownMouseUp(locator1 = "Modal#CLOSE_BUTTON");
 	}
+
+	macro gotoImportTab {
+		if (isSet(subTab)) {
+			Navigator.gotoNavTab(navTab = "Import");
+
+			Navigator.gotoNavTab(navTab = "${subTab}");
+		}
+		else {
+			Navigator.gotoNavTab(navTab = "Import");
+		}
+	}
+
+	macro gotoPortletExportImport {
+		Portlet.gotoPortletOptions(
+			portletName = "Calendar",
+			portletOption = "Export / Import");
+	}
+
+	macro importCalendarFile {
+		UploadDependencyFile.uploadFile(fileName = "${calendarFile}");
+
+		Button.click(button = "Continue");
+
+		Button.click(button = "Import");
+	}
+
+	macro selectConfigurationIFrame {
+		SelectFrame(locator1 = "IFrame#MODAL_BODY");
+	}
+
 }

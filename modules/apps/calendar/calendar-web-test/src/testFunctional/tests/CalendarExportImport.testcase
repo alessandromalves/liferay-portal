@@ -121,8 +121,6 @@ definition {
 		CalendarConfiguration.viewSelectDefaultView(defaultView = "Agenda");
 
 		CalendarConfiguration.viewSelectWeekStartsOn(weekStartDay = "Saturday");
-
-
 	}
 
 	@description = "This is a use case for LPS-53072."
