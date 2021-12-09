@@ -193,7 +193,6 @@ definition {
 		CalendarExportImport.importCalendarFile(
 			calendarFile = "Calendar-empty-file.portlet.lar.portlet.lar",
 			importValidationErrorMessage = "The file Calendar-empty-file.portlet.lar.portlet.lar cannot be imported.");
-  
 	}
 
 	@description = "LRQA-71361 - Verify that user can view the new exported process status in the Current and Previous tab"

@@ -1,42 +1,40 @@
 definition {
 
-    macro gotoPortletExportImport {
-        Portlet.gotoPortletOptions(
-			portletName = "Calendar",
-			portletOption = "Export / Import");
-    }
+	macro gotoImportTab {
+		if (isSet(subTab)) {
+			Navigator.gotoNavTab(navTab = "Import");
 
-    macro selectConfigurationIFrame {
-		SelectFrame(locator1 = "IFrame#MODAL_BODY");
+			Navigator.gotoNavTab(navTab = "${subTab}");
+		}
+		else {
+			Navigator.gotoNavTab(navTab = "Import");
+		}
 	}
 
-    macro gotoImportTab {
-		if (isSet(subTab)) {
-            Navigator.gotoNavTab(navTab = "Import");
+	macro gotoPortletExportImport {
+		Portlet.gotoPortletOptions(
+			portletName = "Calendar",
+			portletOption = "Export / Import");
+	}
 
-            Navigator.gotoNavTab(navTab = "${subTab}");
-        }
-
-        else {
-            Navigator.gotoNavTab(navTab = "Import");
-        }
-    }
-
-    macro importCalendarFile {
+	macro importCalendarFile {
 		UploadDependencyFile.uploadFile(fileName = "${calendarFile}");
 
-        if (isSet(importValidationErrorMessage)) {
+		if (isSet(importValidationErrorMessage)) {
 			AssertTextEquals.assertPartialText(
 				importValidationErrorMessage = "${importValidationErrorMessage}",
-                locator1 = "SitePagesImport#VALIDATION_ERROR_MESSAGE_HEADER",
+				locator1 = "SitePagesImport#VALIDATION_ERROR_MESSAGE_HEADER",
 				value1 = "${importValidationErrorMessage}");
-        }
+		}
+		else {
+			Button.click(button = "Continue");
 
-        else {
-            Button.click(button = "Continue");
+			Button.click(button = "Import");
+		}
+	}
 
-            Button.click(button = "Import");
-        }
+	macro selectConfigurationIFrame {
+		SelectFrame(locator1 = "IFrame#MODAL_BODY");
 	}
 
 }
