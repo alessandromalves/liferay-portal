@@ -252,7 +252,7 @@ definition {
 
 		Form.addTextField(fieldPositionNumber = "0");
 
-		Pause(locator1 = "60000");
+		WaitForElementPresent(locator1 = "Form#SAVE_NOTIFICATION");
 
 		Form.viewSaveNotification();
 
@@ -438,7 +438,7 @@ definition {
 			fieldPositionNumber = "0",
 			fieldType = "Text");
 
-		Pause(locator1 = "60000");
+		WaitForElementPresent(locator1 = "Form#SAVE_NOTIFICATION");
 
 		Form.viewSaveNotification();
 
@@ -2178,7 +2178,7 @@ definition {
 
 		Form.addTextField(fieldPositionNumber = "0");
 
-		Pause(locator1 = "60000");
+		WaitForElementPresent(locator1 = "Form#SAVE_NOTIFICATION");
 
 		Form.viewSaveNotification();
 
