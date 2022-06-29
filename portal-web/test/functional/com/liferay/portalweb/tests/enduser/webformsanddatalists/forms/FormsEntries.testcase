@@ -900,6 +900,8 @@ definition {
 
 		FormsAdmin.viewFormEntryWorkflowStatus(formEntryWorkflowStatus = "Pending");
 
+		// Pausing 120 seconds due to LPS-156460
+
 		Pause(locator1 = "120000");
 
 		Navigator.openSpecificURL(url = "${publishFormURL}");
