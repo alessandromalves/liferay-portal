@@ -302,6 +302,8 @@ definition {
 
 		Form.closeSidebar();
 
+		// Pausing 60 seconds to check no autosave due to changing the default autosave interval. See LPS-156459
+
 		Pause(locator1 = "60000");
 
 		FormsAdminNavigator.gotoBack();
@@ -317,6 +319,8 @@ definition {
 		Form.editFieldLabelMetal(fieldValue = "Text Field Will Be Saved");
 
 		Form.closeSidebar();
+
+		// Pausing 120 seconds due to autosave interval set to two minutes. See LPS-156459
 
 		Pause(locator1 = "120000");
 
@@ -2180,7 +2184,9 @@ definition {
 
 		WaitForElementPresent(locator1 = "Form#SAVE_NOTIFICATION");
 
-		Form.viewSaveNotification();
+		// Pausing 60 seconds due to autosave interval set to one minute. See LPS-156459
+
+		Pause(locator1 = "60000");
 
 		FormsAdminNavigator.gotoBack();
 
