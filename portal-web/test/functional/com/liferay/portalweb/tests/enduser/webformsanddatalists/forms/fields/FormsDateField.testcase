@@ -145,6 +145,7 @@ definition {
 		FormsAdmin.viewFormTableEntry(
 			fieldLabel = "Date Field",
 			fieldValue = "${displayPastDate}");
+			
 	}
 
 	@description = "Verify that a Date Field can be created"

@@ -1104,6 +1104,10 @@ definition {
 
 		Click(locator1 = "FormFields#VALIDATION_ACCEPTED_DATE");
 
+		ScrollWebElementIntoView(
+			key_menuItem = "${key_acceptedDateOption}",
+			locator1 = "MenuItem#DROPDOWN_MENU_ITEM");
+
 		DropdownMenuItem.click(menuItem = "${key_acceptedDateOption}");
 	}
 
